@@ -15,7 +15,8 @@ services:
       - /D/Var Data/www/data/nginx:/etc/nginx/conf.d
       - /D/Var Data/www/html:/var/www/html
   php:
-    image: php:7.2-fpm
+    build:
+      context: ./php-fpm
     container_name: php
     networks:
       - localhost
