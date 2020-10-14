@@ -12,6 +12,7 @@ services:
       - 80:80
       - 443:443
     volumes:
+      # Also add these paths to docker file sharing in control panel
       - /D/Var Data/www/data/nginx:/etc/nginx/conf.d
       - /D/Var Data/www/html:/var/www/html
   php:
