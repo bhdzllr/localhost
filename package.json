@@ -1,16 +1,16 @@
 {
   "name": "localhost",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Local web server",
-  "main": "gulpfile.js",
+  "private": true,
+  "author": "bhdzllr",
+  "license": "MIT",
   "scripts": {
+    "start": "npm run serve",
+    "serve": "eleventy-dev-server --input=www --port=3000",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "bhdzllr",
-  "license": "ISC",
-  "private": "true",
   "devDependencies": {
-    "gulp": "^3.9.1",
-    "gulp-webserver": "^0.9.1"
+    "@11ty/eleventy-dev-server": "^1.0.0-canary.10"
   }
 }

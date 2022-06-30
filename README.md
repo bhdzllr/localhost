@@ -3,18 +3,18 @@
 A local web server with gulp and a "docker-compose.yaml" for a local LEMP stack with docker.
 
 
-## Getting started with gulp ##
+## Getting started with local web server (NPM) ##
 
 Root folder for web server is "www". Place files in this folder. Run web server from command line:
 
 ```bash
-gulp
+npm start
 ```
 
 The server is then available with the address `localhost:3000` from your browser.
 
 
-## Getting started with Docker ##
+## Getting started LEMP (Docker) ##
 
 Go into folder "docker-lemp" and run
 
