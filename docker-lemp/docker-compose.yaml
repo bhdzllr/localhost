@@ -14,9 +14,9 @@ services:
     volumes:
       # Also add these paths to docker file sharing in control panel, then "docker-compose down" and "docker-compose up"
       # In case of problems also check that docker can access the file system (e. g. macOS: System preferences > Security & Privacy > Files and Folders).
-      - /D/Var Data/www/data/nginx:/etc/nginx/conf.d
-      - /D/Var Data/www/html:/var/www/html
-      - /D/Var Data/www/php-project:/var/www/html/php-project # Also add this to "php" volumes
+      - '/D/Var Data/www/data/nginx:/etc/nginx/conf.d'
+      - '/D/Var Data/www/html:/var/www/html'
+      - '/D/Var Data/www/php-project:/var/www/html/php-project' # Also add this to "php" volumes
   php:
     build:
       context: ./php-fpm
@@ -25,8 +25,8 @@ services:
       - localhost
     volumes:
       # Add path if PHP is needed
-      - /D/Var Data/www/html:/var/www/html
-      - /D/Var Data/www/php-project:/var/www/html/php-project
+      - '/D/Var Data/www/html:/var/www/html'
+      - '/D/Var Data/www/php-project:/var/www/html/php-project'
   db:
     image: mariadb
     container_name: db
@@ -36,7 +36,7 @@ services:
     ports:
       - 3306:3306
     volumes:
-      - /D/Var Data/www/data/mysql:/var/lib/mysql
+      - '/D/Var Data/www/data/mysql:/var/lib/mysql'
     environment:
       MYSQL_ROOT_PASSWORD: root
   pma:
@@ -55,3 +55,4 @@ services:
 
 networks:
   localhost:
+    driver: bridge
